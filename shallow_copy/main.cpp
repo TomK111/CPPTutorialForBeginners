@@ -1,62 +1,53 @@
-
-// C++ program for the above approach
 #include <iostream>
-using namespace std;
 
-// Box Class
-class box {
+class Student {
 private:
-    int length;
-    int breadth;
-    int height;
+    std::string name;
+    int age;
 
 public:
-    // Function that sets the dimensions
-    void set_dimensions(int length1, int breadth1,
-                        int height1)
+    void set_dimensions(std::string name, int age)
     {
-        length = length1;
-        breadth = breadth1;
-        height = height1;
+        this->name = name;
+        this->age = age;
     }
 
-    // Function to display the dimensions
-    // of the Box object
     void show_data()
     {
-        cout << " Length = " << length
-             << "\n Breadth = " << breadth
-             << "\n Height = " << height
-             << endl;
+        std::cout << " Name = " << name
+             << "\n Age = " << age
+             << std::endl;
     }
 };
 
-// Driver Code
 int main()
 {
-    // Object of class Box
-    box B1, B3;
+    Student A1, A3;
 
-    // Set dimensions of Box B1
-    std::cout << "B1: " << std::endl;
-    B1.set_dimensions(14, 12, 16);
-    B1.show_data();
+    std::cout << "A1: " << std::endl;
+    A1.set_dimensions("Tommy", 23);
+    A1.show_data();
 
-    // When copying the data of object
-    // at the time of initialization
-    // then copy is made through
-    // COPY CONSTRUCTOR
-    std::cout << "B2" << std::endl;
-    box B2 = B1;
-    B2.show_data();
 
-    // When copying the data of object
-    // after initialization then the
-    // copy is done through DEFAULT
-    // ASSIGNMENT OPERATOR
-    B3 = B1;
-    std::cout << "B3: " << std::endl;
-    B3.show_data();
+    std::cout << "A2" << std::endl;
+    Student A2 = A1;
+    A2.show_data();
+
+    A3 = A1;
+    std::cout << "A3: " << std::endl;
+    A3.show_data();
+
+    std::cout << std::endl;
+
+    std::cout << "Memory Address of A1: " << &A1 << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "Memory Address of A2: " << &A2 << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "Memory Address of A3: " << &A3 << std::endl;
 
 
 
